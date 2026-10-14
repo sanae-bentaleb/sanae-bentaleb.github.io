@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Sanae Bentaleb – Data & Game Analytics Portfolio</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@500;700;800&family=IBM+Plex+Sans:wght@400;500;600&display=swap">
+<style>
+:root{--bg:#0A0F0C;--surface:#121A15;--ink:#E8F5EC;--muted:#9DB5A5;--line:#24352B;--accent:#2EE66B;--accent2:#7BF0A3;--accent-ink:#06130A;--node:#1F7A44;color-scheme:dark}
+:root[data-theme="light"]{--bg:#F2FAF5;--surface:#FFFFFF;--ink:#0A0F0C;--muted:#4A5F52;--line:#CFE3D6;--accent:#0E7A3A;--accent2:#0A5C2B;--accent-ink:#FFFFFF;--node:#7BC99A;color-scheme:light}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:"IBM Plex Sans",system-ui,sans-serif;line-height:1.6;font-size:17px}
+h1,h2,h3{font-family:"Bricolage Grotesque",system-ui,sans-serif;line-height:1.1;margin:0}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--accent);outline-offset:3px}
+.wrap{max-width:1040px;margin:0 auto;padding:0 24px}
+nav{display:flex;gap:22px;justify-content:flex-end;align-items:center;padding:20px 0;font-weight:500;flex-wrap:wrap}
+nav a{text-decoration:none;color:var(--muted)}
+nav a:hover,nav a.active{color:var(--accent)}
+#theme{background:transparent;border:2px solid var(--accent);color:var(--accent);border-radius:999px;padding:4px 14px;font:inherit;font-weight:600;cursor:pointer}
+.hero{display:grid;grid-template-columns:1.1fr .9fr;gap:32px;align-items:center;padding:40px 0 72px}
+.hero h1{font-size:clamp(3rem,9vw,6.2rem);font-weight:800;letter-spacing:-.03em}
+.role{font-size:1.25rem;color:var(--accent2);font-weight:600;margin:18px 0 14px}
+.hero p{max-width:52ch;color:var(--muted);margin:0 0 26px}
+.btns{display:flex;gap:12px;flex-wrap:wrap}
+.btn{display:inline-block;padding:12px 22px;border-radius:999px;font-weight:600;text-decoration:none;border:2px solid var(--accent)}
+.btn.main{background:var(--accent);color:var(--accent-ink)}
+.btn.alt{color:var(--accent)}
+.btn:hover{transform:translateY(-2px)}
+.graph{width:100%;height:auto}
+.graph line{stroke:var(--line);stroke-width:2}
+.graph .hot{stroke:var(--accent);stroke-width:3}
+.graph circle{fill:var(--surface);stroke:var(--ink);stroke-width:2.5}
+.graph .c1{fill:var(--accent);stroke:var(--accent)}
+.graph .c2{fill:var(--node);stroke:var(--accent2)}
+.graph .pulse{animation:p 2.4s ease-in-out infinite;transform-box:fill-box;transform-origin:center}
+@keyframes p{50%{transform:scale(1.35)}}
+@media (prefers-reduced-motion:reduce){.graph .pulse{animation:none}html{scroll-behavior:auto}.btn:hover{transform:none}}
+section{padding:56px 0;border-top:2px solid var(--line)}
+h2{font-size:clamp(1.9rem,4vw,2.6rem);margin-bottom:28px;letter-spacing:-.02em}
+.proj{display:grid;grid-template-columns:200px 1fr;gap:24px;padding:28px 0;border-bottom:1px solid var(--line)}
+.proj:last-child{border-bottom:0}
+.meta{color:var(--muted);font-size:.9rem}
+.meta strong{display:block;font-size:1.05rem;color:var(--ink)}
+.proj h3{font-size:1.5rem;margin-bottom:8px}
+.proj p{margin:0 0 12px;max-width:62ch}
+.stats{display:flex;gap:10px;flex-wrap:wrap;margin:12px 0}
+.stat{background:var(--surface);border:2px solid var(--accent2);border-radius:10px;padding:6px 14px;font-weight:600}
+.stat b{color:var(--accent);font-family:"Bricolage Grotesque",sans-serif;font-size:1.2rem;margin-right:6px}
+.tags{display:flex;gap:8px;flex-wrap:wrap;list-style:none;padding:0;margin:10px 0 0}
+.tags li{font-size:.85rem;background:var(--surface);border:1px solid var(--line);border-radius:6px;padding:2px 10px}
+.skills{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:20px}
+.skills div{background:var(--surface);border-radius:14px;padding:20px;border:1px solid var(--line)}
+.skills h3{font-size:1.1rem;margin-bottom:8px;color:var(--accent)}
+.skills p{margin:0;color:var(--muted)}
+.edu p{margin:0 0 14px}.edu span{color:var(--muted)}
+.contact a{font-size:1.2rem;display:block;margin:6px 0;width:fit-content}
+footer{padding:32px 0;color:var(--muted);font-size:.9rem}
+@media (max-width:760px){.hero{grid-template-columns:1fr}.proj{grid-template-columns:1fr;gap:8px}.graph{max-width:340px}}
+</style>
+</head>
+<body>
+<div class="wrap">
+<nav aria-label="Navigation">
+<a href="#projects">Projects</a><a href="#skills">Skills</a><a href="#education">Education</a><a href="#contact">Contact</a>
+<button id="theme" type="button" aria-label="Switch between light and dark mode">Dark mode</button>
+</nav>
+
+<header class="hero">
+<div>
+<h1>Sanae Bentaleb</h1>
+<div class="role">Data Analyst · Data Scientist · BI</div>
+<p>Master's student in Data Engineering and Analytics applied to the gaming industry, with a strong background in mathematics. I am looking for an end-of-studies internship (PFE) in Morocco in Data Analytics, Data Science, Business Intelligence or Game Analytics.</p>
+<div class="btns"><a class="btn main" href="#projects">View my projects</a><a class="btn alt" href="#contact">Contact me</a></div>
+</div>
+<svg class="graph" viewBox="0 0 400 320" role="img" aria-label="Session graph: items linked together, like in my work on graph neural networks">
+<line x1="60" y1="240" x2="150" y2="150"/><line class="hot" x1="150" y1="150" x2="260" y2="190"/><line class="hot" x1="260" y1="190" x2="340" y2="90"/>
+<line x1="150" y1="150" x2="190" y2="50"/><line x1="190" y1="50" x2="340" y2="90"/><line x1="260" y1="190" x2="230" y2="280"/><line x1="60" y1="240" x2="230" y2="280"/>
+<circle cx="60" cy="240" r="16"/><circle class="c1" cx="150" cy="150" r="20"/><circle class="c2 pulse" cx="260" cy="190" r="22"/><circle class="c1" cx="340" cy="90" r="16"/>
+<circle cx="190" cy="50" r="14"/><circle cx="230" cy="280" r="14"/>
+</svg>
+</header>
+
+<section id="about" class="about">
+<h2>About me</h2>
+<p>I'm a Master's student in Data Engineering and Analytics applied to the gaming industry at ENS Fès. I come from a mathematics background, and that is what drew me to data: I enjoy turning raw numbers into answers that people can act on.</p>
+<p>Through my projects, I have worked on player churn prediction with Machine Learning and on session-based recommendation with Graph Neural Networks. I also manage databases, build dashboards, and have worked in teams of up to 8 people on projects presented at the Morocco Gaming Expo.</p>
+<p>I am looking for an end-of-studies internship (PFE) in Data Analytics, Data Science, Business Intelligence or Game Analytics, anywhere in Morocco.</p>
+</section>
+
+<section id="projects">
+<h2>Projects</h2>
+
+<article class="proj">
+<div class="meta"><strong>2026</strong>Team project (4 people)<br>Supervised by Prof. Amine Sallah, ENS Fès</div>
+<div>
+<h3>Online Player Churn Prediction</h3>
+<p>End-to-end Machine Learning pipeline: exploratory analysis, feature engineering, class imbalance handling with SMOTE, then a comparison of 3 supervised models using stratified 5-fold cross-validation.</p>
+<div class="stats"><span class="stat"><b>95%</b>accuracy</span><span class="stat"><b>0.91</b>F1-score</span><span class="stat"><b>0.94</b>AUC-ROC</span></div>
+<p class="meta">Best model: XGBoost, on 40,034 observations.</p>
+<ul class="tags"><li>Python</li><li>Pandas</li><li>Scikit-learn</li><li>XGBoost</li><li>Imbalanced-learn</li></ul>
+</div>
+</article>
+
+<article class="proj">
+<div class="meta"><strong>2026</strong>Research report<br>Supervised by Prof. Otmane Mallouk, ENS Fès</div>
+<div>
+<h3>Graph Neural Networks for Sequential Recommendation</h3>
+<p>Study and implementation of SR-GNN for session-based recommendation, with a comparative analysis of three architectures: SR-GNN, GCE-GNN and SURGE.</p>
+<div class="stats"><span class="stat"><b>50.73%</b>HR@20</span><span class="stat"><b>17.59%</b>MRR@20</span></div>
+<p class="meta">Results obtained on the Diginetica dataset.</p>
+<ul class="tags"><li>Python</li><li>PyTorch</li><li>PyTorch Geometric</li></ul>
+</div>
+</article>
+
+<article class="proj">
+<div class="meta"><strong>2026</strong>Personal project</div>
+<div>
+<h3>Video Game Data Analysis</h3>
+<p>Cleaning, analysis and visualization of a player behavior dataset: trends and performance metrics.</p>
+<ul class="tags"><li>Python</li><li>Pandas</li><li>Matplotlib</li><li>Seaborn</li></ul>
+<p style="margin-top:12px"><a href="https://github.com/sanae23-bn/gaming-data-analysis">View the code on GitHub</a></p>
+</div>
+</article>
+
+<article class="proj">
+<div class="meta"><strong>2026</strong>Group project<br>Presented at Morocco Gaming Expo (MGEX), Rabat</div>
+<div>
+<h3>EduSensei, an Intelligent Learning Platform</h3>
+<p>My role: designing and managing the database. I structured the collections and their relationships, and modeled student and teacher data with secure authentication.</p>
+<ul class="tags"><li>Firebase</li><li>Firestore (NoSQL)</li></ul>
+</div>
+</article>
+
+<article class="proj">
+<div class="meta"><strong>2026</strong>Group project (8 people)<br>Supervised by Prof. Faouzi Bouyattar, ENS Fès</div>
+<div>
+<h3>Night Shift, a Survival Horror Video Game</h3>
+<p>My role: character designer and documentation manager. I designed the characters and wrote the game design documentation.</p>
+<ul class="tags"><li>Unreal Engine 5</li><li>Blender</li><li>Mixamo</li><li>Sketchfab</li></ul>
+</div>
+</article>
+</section>
+
+<section id="skills">
+<h2>Skills</h2>
+<div class="skills">
+<div><h3>Programming</h3><p>Python (Pandas, NumPy, Scikit-learn), C, C++</p></div>
+<div><h3>Machine Learning</h3><p>XGBoost, Random Forest, SMOTE</p></div>
+<div><h3>Deep Learning</h3><p>PyTorch, PyTorch Geometric</p></div>
+<div><h3>Data</h3><p>SQL (basics), NoSQL (Firestore)</p></div>
+<div><h3>Visualization and BI</h3><p>Power BI (beginner), Matplotlib, Seaborn, Excel (pivot tables, formulas)</p></div>
+<div><h3>Tools</h3><p>Jupyter Notebook, Git, GitHub</p></div>
+</div>
+<p style="margin-top:22px;color:var(--muted)">Languages: Arabic (native), French (fluent), English (fluent).</p>
+</section>
+
+<section id="education" class="edu">
+<h2>Education</h2>
+<p><strong>Master's in Data Engineering and Analytics applied to the Gaming Industry</strong><br><span>ENS Fès, USMBA · 2025 – 2027</span></p>
+<p><strong>Bachelor's in Mathematics Education</strong><br><span>ESEF Oujda, Mohammed First University · 2021 – 2024</span></p>
+</section>
+
+<section id="contact" class="contact">
+<h2>Contact</h2>
+<p>Available for a long-term end-of-studies internship anywhere in Morocco.</p>
+<a href="mailto:bentalebsanae011@gmail.com">bentalebsanae011@gmail.com</a>
+<a href="tel:+212612485864">+212 612 485 864</a>
+<a href="https://github.com/sanae23-bn">github.com/sanae23-bn</a>
+<a href="https://www.linkedin.com/in/sanae-bentaleb-504514380">linkedin.com/in/sanae-bentaleb-504514380</a>
+</section>
+<footer>Sanae Bentaleb · Fès, Morocco</footer>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
